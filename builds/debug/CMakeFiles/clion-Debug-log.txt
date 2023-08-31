@@ -1,0 +1,5 @@
+/Users/grantupson/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Users/grantupson/Applications/CLion.app/Contents/bin/ninja/mac/ninja -DCMAKE_C_COMPILER=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -DCMAKE_CXX_COMPILER=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -G Ninja -S /Users/grantupson/Documents/Development/Projects/Abyss -B /Users/grantupson/Documents/Development/Projects/Abyss/builds/debug
+-- Using Cocoa for window creation
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/grantupson/Documents/Development/Projects/Abyss/builds/debug
