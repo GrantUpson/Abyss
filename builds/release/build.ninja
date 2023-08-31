@@ -63,6 +63,13 @@ build CMakeFiles/Abyss.dir/source/Game.cpp.o: CXX_COMPILER__Abyss_unscanned_Rele
   OBJECT_DIR = CMakeFiles/Abyss.dir
   OBJECT_FILE_DIR = CMakeFiles/Abyss.dir/source
 
+build CMakeFiles/Abyss.dir/libraries/glad/src/glad.c.o: C_COMPILER__Abyss_unscanned_Release /Users/grantupson/Documents/Development/Projects/Abyss/libraries/glad/src/glad.c || cmake_object_order_depends_target_Abyss
+  DEP_FILE = CMakeFiles/Abyss.dir/libraries/glad/src/glad.c.o.d
+  FLAGS = -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/grantupson/Documents/Development/Projects/Abyss/libraries -I/Users/grantupson/Documents/Development/Projects/Abyss/libraries/glad/include -I/Users/grantupson/Documents/Development/Projects/Abyss/libraries/glfw-3.3.7/include/GLFW -I/Users/grantupson/Documents/Development/Projects/Abyss/source -I/Users/grantupson/Documents/Development/Projects/Abyss/source/platform/macos -I/Users/grantupson/Documents/Development/Projects/Abyss/source/rendering/opengl -I/Users/grantupson/Documents/Development/Projects/Abyss/libraries/glfw-3.3.7/include
+  OBJECT_DIR = CMakeFiles/Abyss.dir
+  OBJECT_FILE_DIR = CMakeFiles/Abyss.dir/libraries/glad/src
+
 build CMakeFiles/Abyss.dir/source/utility/Logger.cpp.o: CXX_COMPILER__Abyss_unscanned_Release /Users/grantupson/Documents/Development/Projects/Abyss/source/utility/Logger.cpp || cmake_object_order_depends_target_Abyss
   DEP_FILE = CMakeFiles/Abyss.dir/source/utility/Logger.cpp.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu++2b -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
@@ -92,7 +99,7 @@ build CMakeFiles/Abyss.dir/source/rendering/opengl/Texture.cpp.o: CXX_COMPILER__
 #############################################
 # Link the executable bin/Abyss
 
-build bin/Abyss: CXX_EXECUTABLE_LINKER__Abyss_Release CMakeFiles/Abyss.dir/source/Main.cpp.o CMakeFiles/Abyss.dir/source/Game.cpp.o CMakeFiles/Abyss.dir/source/utility/Logger.cpp.o CMakeFiles/Abyss.dir/source/platform/macos/MacOSWindow.cpp.o CMakeFiles/Abyss.dir/source/rendering/opengl/Texture.cpp.o | libraries/libglfw3.a || libraries/libglfw3.a
+build bin/Abyss: CXX_EXECUTABLE_LINKER__Abyss_Release CMakeFiles/Abyss.dir/source/Main.cpp.o CMakeFiles/Abyss.dir/source/Game.cpp.o CMakeFiles/Abyss.dir/libraries/glad/src/glad.c.o CMakeFiles/Abyss.dir/source/utility/Logger.cpp.o CMakeFiles/Abyss.dir/source/platform/macos/MacOSWindow.cpp.o CMakeFiles/Abyss.dir/source/rendering/opengl/Texture.cpp.o | libraries/libglfw3.a || libraries/libglfw3.a
   FLAGS = -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   LINK_LIBRARIES = libraries/libglfw3.a  -framework Cocoa  -framework IOKit  -framework CoreFoundation
   OBJECT_DIR = CMakeFiles/Abyss.dir

@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+# OS files
+*.DS_Store
+
+# IDE files
+*.idea/
+
+# Build directories
+builds/debug/
+builds/release/
