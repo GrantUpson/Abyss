@@ -24,7 +24,24 @@ set(SOURCE_FILES source/Main.cpp
         libraries/glad/src/glad.c
         source/utility/Utility.h
         source/utility/Logger.cpp
-        source/utility/Logger.h)
+        source/utility/Logger.h
+        source/networking/Socket.h
+        source/networking/Address.cpp
+        source/networking/Address.h
+        testing/Receiver.cpp
+        testing/Receiver.h
+        testing/Sender.cpp
+        testing/Sender.h
+        source/networking/Packet.h
+        source/networking/Opcodes.h
+        libraries/crc/CRC.h
+        source/networking/BinaryDecoder.cpp
+        source/networking/BinaryDecoder.h
+        source/networking/BinaryEncoder.cpp
+        source/networking/BinaryEncoder.h
+        source/networking/Packet.cpp
+        source/networking/NetworkingUtilities.h)
+
 
 if(WIN32)
     include_directories(${CMAKE_SOURCE_DIR}/source/platform/windows)
@@ -34,7 +51,9 @@ if(WIN32)
             #source/rendering/directx/Texture.cpp
             #source/rendering/directx/Texture.h
             source/rendering/opengl/Texture.cpp
-            source/rendering/opengl/Texture.h)
+            source/rendering/opengl/Texture.h
+            source/platform/windows/WindowsSocket.cpp
+            source/platform/windows/WindowsNetworkingUtilities.cpp)
 
 elseif(APPLE)
     include_directories(${CMAKE_SOURCE_DIR}/source/platform/macos)
@@ -45,14 +64,19 @@ elseif(APPLE)
             #source/rendering/metal/Texture.cpp
             #source/rendering/metal/Texture.h
             source/rendering/opengl/Texture.cpp
-            source/rendering/opengl/Texture.h)
+            source/rendering/opengl/Texture.h
+            source/platform/macos/MacOSSocket.cpp
+            source/platform/macos/MacOSNetworkingUtilities.cpp
+    )
 
 elseif(UNIX AND NOT APPLE)
     include_directories(${CMAKE_SOURCE_DIR}/source/platform/linux)
     include_directories(${CMAKE_SOURCE_DIR}/source/rendering/vulkan)
     SET(SOURCE_FILES ${SOURCE_FILES} source/platform/linux/LinuxWindow.cpp source/platform/linux/Window.h
             source/rendering/vulkan/Texture.cpp
-            source/rendering/vulkan/Texture.h)
+            source/rendering/vulkan/Texture.h
+            source/platform/linux/LinuxSocket.cpp
+            source/platform/linux/LinuxNetworkingUtilities.cpp)
 
 endif()
 
