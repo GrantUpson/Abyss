@@ -3,7 +3,7 @@
 #include "utility/Utility.h"
 
 
-// TODO Add IPV6 support
+
 class Address {
 public:
     Address() = default;

@@ -42,7 +42,7 @@ void Socket::Close() const {
 }
 
 
-bool Socket::Send(const Address& destination, const void* data, uint32 bufferSize) const {
+bool Socket::Send(const SocketAddress& destination, const void* data, uint32 bufferSize) const {
     sockaddr_in address {};
     address.sin_family = AF_INET;
     address.sin_addr.s_addr = htonl(destination.GetAddress());
@@ -59,14 +59,13 @@ bool Socket::Send(const Address& destination, const void* data, uint32 bufferSiz
 }
 
 
-// TODO Determine if sender information is required for anything.
-uint32 Socket::Receive(Address& sender, void* data, uint32 bufferSize) const {
+uint32 Socket::Receive(SocketAddress& sender, void* data, uint32 bufferSize) const {
     sockaddr_in from {};
     socklen_t fromLength = sizeof(from);
 
     uint32 bytes = recvfrom(handle, data, bufferSize, 0, (sockaddr*)&from, &fromLength);
-    uint32 fromAddress = ntohl(from.sin_addr.s_addr);
-    uint16 fromPort = ntohs(from.sin_port);
+    sender.address = ntohl(from.sin_addr.s_addr);
+    sender.port = ntohs(from.sin_port);
 
     if(bytes == -1) {
         bytes = 0;
